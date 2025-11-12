@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Colour Paletter</title>
+    {{ bootstrap.load_css() }}
+    <style>
+
+    </style>
+</head>
+<body>
+<h1 style="text-align: center" class="my-4">Colour Paletter</h1>
+<form style="text-align: center" method=post enctype=multipart/form-data class="p-3">
+    <input type=file name=file>
+    <input type=submit value=Upload>
+</form>
+<div class="row row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1 g-4 p-5" style="vertical-align: center">
+    {% for image in images %}
+    <div class="col d-flex flex-column align-content-center">
+        <img src="static/images/temp/{{ image }}" class="image mb-3" style="width: 100%" alt="image"/>
+        <img src="static/images/outputs/{{ image }}" class="image" style="width: 100%" alt="image"/>
+    </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>
